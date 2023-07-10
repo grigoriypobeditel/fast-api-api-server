@@ -22,7 +22,7 @@ class Server(Model):
     description: Mapped[str]
     type_server: Mapped[TypeServer]
     
-    memory_cap: Mapped[int]
+    memory_cap: Mapped[str] = mapped_column(String(16))
     disk_cap: Mapped[str] = mapped_column(String(16))
     type_disk: Mapped[TypeDisk]
 
