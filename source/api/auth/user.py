@@ -1,7 +1,6 @@
 from pydantic import BaseModel, EmailStr
 
-from source.databse.models.user_model import Role
-
+from source.databse.base import User
 
 
 class AuthUser(BaseModel):
