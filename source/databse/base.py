@@ -9,7 +9,8 @@ from sqlalchemy.orm import (
 from sqlalchemy import (
     String,
     create_engine,
-    select
+    select,
+    update
 )
 
 
