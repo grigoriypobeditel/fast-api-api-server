@@ -10,7 +10,8 @@ from sqlalchemy import (
     String,
     create_engine,
     select,
-    update
+    update,
+    delete
 )
 
 
