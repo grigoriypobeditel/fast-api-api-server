@@ -1,10 +1,18 @@
 from fastapi import FastAPI
 from uvicorn import run as uvicorn_run
 
+# create
 from source.api.create import user as c_user_api
-from source.api.auth import user as auth_user_api
-from source.api.update import password as u_password_api
 from source.api.create import service as c_service_api
+# read
+# update
+from source.api.update import password as u_password_api
+# delete
+from source.api.delete import service as d_service_api
+
+# other
+from source.api.auth import user as auth_user_api
+
 
 app = FastAPI()
 
@@ -34,6 +42,11 @@ async def auth(data: auth_user_api.AuthUser) -> dict:
 @app.post("/create/service/")
 async def create_service(data: c_service_api.CreateService) -> dict:
     return c_service_api.route(data)
+
+
+@app.delete("/delete/service")
+async def delete_service(data: d_service_api.DeleteService) -> dict:
+    return d_service_api.route(data)
 
 
 if __name__ == "__main__":
